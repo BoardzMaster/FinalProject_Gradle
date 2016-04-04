@@ -1,0 +1,7 @@
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_lib"
+    android:name="com.javajoke_lib.konstantin.android_joke_library.JokeActivityFragment"
+    tools:layout="@layout/fragment_main_lib"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />

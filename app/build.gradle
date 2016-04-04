@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
+    compileSdkVersion 23
     buildToolsVersion "22.0.1"
 
     defaultConfig {
@@ -24,4 +24,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.1.1'
     // Added for AdMob
     compile 'com.google.android.gms:play-services:7.3.0'
+    // Added Java Library for jokes
+    compile project (":javaJokes")
+    // Added Android Library for jokes
+    compile project (":android_joke_library")
 }

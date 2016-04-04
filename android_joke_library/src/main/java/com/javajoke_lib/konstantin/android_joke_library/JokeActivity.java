@@ -1,27 +1,34 @@
-package com.udacity.gradle.builditbigger;
+package com.javajoke_lib.konstantin.android_joke_library;
+
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
-import com.javajoke_lib.konstantin.android_joke_library.JokeActivity;
-import com.udacity.gradle.jokes.Joker;
-
-
-
-public class MainActivity extends ActionBarActivity {
-
+public class JokeActivity extends AppCompatActivity {
 
     public final static String EXTRA_JOKE = "com.udacity.gradle.builditbigger.JOKE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_lib);
+        Intent Movie_Intent;
+
+        Movie_Intent = getIntent();
+        String joke = Movie_Intent.getStringExtra(JokeActivity.EXTRA_JOKE);
+
+        Bundle arguments = new Bundle();
+        arguments.putString(JokeActivity.EXTRA_JOKE, joke);
+
+        JokeActivityFragment fragment = new JokeActivityFragment();
+        fragment.setArguments(arguments);
+
+        getSupportFragmentManager().beginTransaction()
+               .add(R.id.fragment_lib, fragment).commit();
+
     }
 
 
@@ -46,14 +53,4 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    public void tellJoke(View view){
-        Joker MyJoker = new Joker();
-        Toast.makeText(this, MyJoker.getJoke(), Toast.LENGTH_SHORT).show();
-        Intent myIntent = new Intent(this, JokeActivity.class);
-        myIntent.putExtra(MainActivity.EXTRA_JOKE,MyJoker.getJoke());
-        startActivity(myIntent);
-    }
-
-
 }
