@@ -1,11 +1,11 @@
-package com.javajoke_lib.konstantin.android_joke_library;
-
+package com.javajoke_lib.konstantin.jokelibrary;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class JokeActivity extends AppCompatActivity {
 
@@ -14,28 +14,22 @@ public class JokeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_lib);
-        Intent Movie_Intent;
+        setContentView(R.layout.activity_joke);
 
-        Movie_Intent = getIntent();
-        String joke = Movie_Intent.getStringExtra(JokeActivity.EXTRA_JOKE);
+        Intent Joke_Intent;
+        Joke_Intent = getIntent();
 
-        Bundle arguments = new Bundle();
-        arguments.putString(JokeActivity.EXTRA_JOKE, joke);
+        String Joke = Joke_Intent.getStringExtra(JokeActivity.EXTRA_JOKE);
 
-        JokeActivityFragment fragment = new JokeActivityFragment();
-        fragment.setArguments(arguments);
+        TextView JokeView = (TextView) findViewById(R.id.Joke_text);
 
-        getSupportFragmentManager().beginTransaction()
-               .add(R.id.fragment_lib, fragment).commit();
-
+        JokeView.setText(Joke);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_joke, menu);
         return true;
     }
 

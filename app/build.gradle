@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "22.0.1"
+    buildToolsVersion '23.0.2'
 
     defaultConfig {
         applicationId "com.udacity.gradle.builditbigger"
@@ -25,7 +25,7 @@ dependencies {
     // Added for AdMob
     compile 'com.google.android.gms:play-services:7.3.0'
     // Added Java Library for jokes
-    compile project (":javaJokes")
+    compile project(':javaJokes')
     // Added Android Library for jokes
-    compile project (":android_joke_library")
+    compile project(":jokelibrary")
 }

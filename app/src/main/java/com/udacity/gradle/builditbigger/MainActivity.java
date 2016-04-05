@@ -8,7 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.javajoke_lib.konstantin.android_joke_library.JokeActivity;
+import com.javajoke_lib.konstantin.jokelibrary.JokeActivity;
+
 import com.udacity.gradle.jokes.Joker;
 
 
